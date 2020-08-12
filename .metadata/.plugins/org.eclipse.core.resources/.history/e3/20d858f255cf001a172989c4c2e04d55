@@ -1,0 +1,12 @@
+
+public class DuckSimulator {
+	public static void main(String[] args) {
+		Duck mallard = new MallardDuck();
+		
+		mallard.performFly();
+		mallard.performQuack();
+		
+		System.out.println("I hurted my wings(날개가 다쳤어요)");
+		mallard.setFlyBehavior(new FlyNoWay());
+	}
+}

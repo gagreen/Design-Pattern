@@ -1,0 +1,27 @@
+
+// 바뀌는 부분을 분리하기 위해서 나는 행동과 우는 행동을 분리함
+// 상위 형식에 맞춰 프로그래밍하기 위해 상위 클래스를 만듦
+
+// 효과: 다른 형식의 객체에서도 나는 행동이나 우는 행동을 재사용할 수 있다.
+//		기존의 행동 클래스를 수정하거나 추가할 때, Duck 클래스를 전혀 건드릴 필요가 없다.
+
+public abstract class Duck {
+	FlyBehavior flyBehavior;		// 나는 행동 만을 관
+	QuackBehavior quackBehavior; 	// 
+	
+	public Duck() {}
+	
+	public void performFly() {
+		flyBehavior.fly();
+	}
+	
+	public void performQuack() {
+		quackBehavior.quack();
+	}
+	
+	public void swim() {
+		System.out.println("모든 오리는 물에 떠요, 가짜 오리도 말이죠");
+	}
+	
+	
+}
