@@ -1,5 +1,7 @@
 package SimpleRemote;
 
+import device.*;
+
 public class GarageDoorOpenCommand implements Command {
 	GarageDoor garageDoor;
 	
