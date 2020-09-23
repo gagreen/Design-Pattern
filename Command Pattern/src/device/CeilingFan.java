@@ -3,10 +3,11 @@ package device;
 public class CeilingFan {
 	String location = "";
 	int level;
-	public static final int HIGH = 2;
-	public static final int MEDIUM = 1;
-	public static final int LOW = 0;
- 
+	public static final int HIGH = 3;
+	public static final int MEDIUM = 2;
+	public static final int LOW = 1;
+	public static final int OFF = 0;
+	
 	public CeilingFan(String location) {
 		this.location = location;
 	}
