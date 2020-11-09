@@ -5,7 +5,9 @@ public abstract class CaffeineBeverage {
 		boilWater();
 		brew();
 		pourInCup();
-		addCondiments();
+		if(customerWantsCondiments()) { // 후크를 이용하면 다양한 알고리즘을 구상할 수 있다.
+			addCondiments();
+		}
 	}
 	
 	abstract void brew();			// 
@@ -20,4 +22,8 @@ public abstract class CaffeineBeverage {
 		System.out.println("컵에 따르는 중..");
 	}
 	
+	// 후크(Hook)
+	boolean customerWantsCondiments() { // 서브클래스에서 필요에 따라 오버라이드하도록
+		return true;
+	}
 }
