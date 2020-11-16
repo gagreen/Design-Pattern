@@ -1,3 +1,4 @@
+package caffeine;
 /* 서브 클래스에서 추상 메서드를 구현한다 */
 public class Tea extends CaffeineBeverage {
 

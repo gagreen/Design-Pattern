@@ -1,3 +1,4 @@
+package caffeine;
 /* 알고리즘을 정의하는 추상 메서드 */
 public abstract class CaffeineBeverage {
 	/* 템플릿 메서드(TemplateMethod)로, 단 단계들을 메서드로 표현한다. */

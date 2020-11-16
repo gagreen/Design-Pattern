@@ -1,3 +1,4 @@
+package caffeine;
 /* 같은 알고리즘을 수행하는 객체도, 세부 내용은 다르게 구현할 수 있다. */
 public class Coffee extends CaffeineBeverage {
 

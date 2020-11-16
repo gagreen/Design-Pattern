@@ -1,3 +1,4 @@
+package caffeine;
 
 public class BeverageTestDriver {
 	
