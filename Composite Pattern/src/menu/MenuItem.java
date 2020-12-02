@@ -1,5 +1,9 @@
 package menu;
 
+import java.util.Iterator;
+
+import iterators.NullIterator;
+
 //MenuComponent의 MenuItem 관련 메서드만 구현
 public class MenuItem extends MenuComponent { 
 	String name;
@@ -37,5 +41,10 @@ public class MenuItem extends MenuComponent {
 		}
 		System.out.print(", " + getPrice());
 		System.out.println("\t -- " + getDescription());
+	}
+	
+	@Override
+	public Iterator createIterator() {
+		return new NullIterator();
 	}
 }

@@ -1,5 +1,8 @@
 package menu;
 // 컴포지트 패턴: 객체들을 트리 구조로 구성하여 계층 구조로 디자인 
+
+import java.util.Iterator;
+
 public abstract class MenuComponent {
 	
 	/* MenuComponent를 추가/삭제/열람 등을 위한 메서드, 즉 메뉴(서브트리)의 역할 */
@@ -37,4 +40,7 @@ public abstract class MenuComponent {
 		throw new UnsupportedOperationException();
 	}
 	
+	public Iterator createIterator() {
+		throw new UnsupportedOperationException();
+	}
 }

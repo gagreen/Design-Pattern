@@ -3,14 +3,15 @@ package menu;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import iterators.CompositeIterator;
+
 //MenuComponent의 Menu 관련 메서드만 구현
 public class Menu extends MenuComponent {
 	ArrayList menuComponents = new ArrayList();
 	String name;
 	String descrption;
 	
-	public Menu(ArrayList menuComponents, String name, String descrption) {
-		this.menuComponents = menuComponents;
+	public Menu(String name, String descrption) {
 		this.name = name;
 		this.descrption = descrption;
 	}
@@ -42,7 +43,7 @@ public class Menu extends MenuComponent {
 	
 	@Override
 	public void print() {
-		System.out.println("\n" + getName());
+		System.out.print("\n" + getName());
 		System.out.println(", " + getDescription());
 		System.out.println("------------------------------");
 		
@@ -51,5 +52,10 @@ public class Menu extends MenuComponent {
 			MenuComponent menuComponent = (MenuComponent)iterator.next();
 			menuComponent.print(); // 재귀적인 사용법
 		}
+	}
+	
+	@Override
+	public Iterator createIterator() {
+		return new CompositeIterator(menuComponents.iterator());
 	}
 }
