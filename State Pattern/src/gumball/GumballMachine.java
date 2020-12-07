@@ -35,7 +35,7 @@ public class GumballMachine {
 		state.dispense(); // GumballMachine에선 dispense메서드를 구현하지 않아도 됨(내부에서만 필요하기 때문)
 	}
 	
-	void SetState(State state) {
+	void setState(State state) {
 		this.state = state;
 	}
 	
@@ -63,5 +63,7 @@ public class GumballMachine {
 		return soldState;
 	}
 	
-	
+	public int getCount() {
+		return count;
+	}
 }
