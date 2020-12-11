@@ -12,8 +12,11 @@ public interface State {
 	public void ejectQuater();
 	
 	// 손잡이 돌리기
-	public void turnCrank();
+	public boolean turnCrank();
 	
 	// 알맹이 배출
 	public void dispense();
+	
+	// 알맹이 리필
+	public void refill();
 }

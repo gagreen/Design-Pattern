@@ -1,12 +1,13 @@
 package gumball;
 
-/* 판매 상태(손잡이를 돌린 상태) */
-public class SoldState implements State {
+/* 당첨 상태(손잡이를 돌린 상태 + 알맹이 하나 더) */
+public class WinnerState implements State {
 	GumballMachine gumballMachine;
 	
-	public SoldState(GumballMachine gumballMachine) {
+	public WinnerState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
 	}
+
 
 	@Override
 	public void insertQuater() {
@@ -26,12 +27,17 @@ public class SoldState implements State {
 
 	@Override
 	public void dispense() {
-		gumballMachine.releaseBall();
-		if(gumballMachine.getCount() > 0) {
-			gumballMachine.setState(gumballMachine.getNoQuarterState());
-		} else {
-			System.out.println("알맹이가 모두 떨어졌습니다.");
+		System.out.println("축하드립니다! 알맹이를 하나 더!!!");
+		gumballMachine.releaseBall(); // 일단 한 번 뽑고
+		if(gumballMachine.getCount() == 0) {
 			gumballMachine.setState(gumballMachine.getSoldOutState());
+		} else {
+			gumballMachine.releaseBall(); // 한 번 더!
+			if(gumballMachine.getCount() > 0) {
+				gumballMachine.setState(gumballMachine.getNoQuarterState());
+			} else {
+				gumballMachine.setState(gumballMachine.getSoldOutState());
+			}
 		}
 	}
 

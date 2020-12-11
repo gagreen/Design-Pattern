@@ -19,13 +19,18 @@ public class SoldOutState implements State {
 	}
 
 	@Override
-	public void turnCrank() {
+	public boolean turnCrank() {
 		System.out.println("알맹이가 매진되었습니다.");
+		return false;
 	}
 
 	@Override
 	public void dispense() {
 		System.out.println("알맹이가 매진되었습니다.");
 	}
-
+	
+	@Override
+	public void refill() { 
+		gumballMachine.setState(gumballMachine.getNoQuarterState());
+	}
 }

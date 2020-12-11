@@ -14,15 +14,15 @@ public class NoQuarterState implements State {
 		gumballMachine.setState(gumballMachine.getHasQuarterState());
 	}
 
-	/*  */
 	@Override
 	public void ejectQuater() {
 		System.out.println("동전을 넣어주세요");
 	}
 
 	@Override
-	public void turnCrank() {
+	public boolean turnCrank() {
 		System.out.println("동전을 넣어주세요");
+		return false;
 	}
 
 	@Override
@@ -30,4 +30,5 @@ public class NoQuarterState implements State {
 		System.out.println("동전을 넣어주세요");
 	}
 
+	public void refill() {}
 }
